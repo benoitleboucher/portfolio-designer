@@ -1,0 +1,20 @@
+{
+  "designTools": [
+    { "name": "Figma", "level": 95 },
+    { "name": "Adobe XD", "level": 90 },
+    { "name": "Photoshop", "level": 85 },
+    { "name": "Illustrator", "level": 88 }
+  ],
+  "devSkills": [
+    { "name": "HTML/CSS", "level": 92 },
+    { "name": "JavaScript", "level": 85 },
+    { "name": "React", "level": 88 },
+    { "name": "Tailwind CSS", "level": 90 }
+  ],
+  "softSkills": [
+    { "name": "Communication", "description": "Excellente capacité à communiquer avec les clients et l'équipe" },
+    { "name": "Collaboration", "description": "Travail d'équipe efficace et harmonieux" },
+    { "name": "Créativité", "description": "Pensée créative et solutions innovantes" },
+    { "name": "Adaptabilité", "description": "Capacité à s'adapter aux changements et nouveaux défis" }
+  ]
+}

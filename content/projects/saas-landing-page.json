@@ -1,0 +1,14 @@
+{
+  "title": "SaaS Landing Page",
+  "category": "web",
+  "description": "Landing page convertissante pour produit SaaS",
+  "fullDescription": "Landing page haute conversion pour un produit SaaS B2B. Copywriting optimisé, hiérarchie visuelle claire, et CTAs stratégiquement placés. Animations Webflow sur mesure et optimisation SEO complète. Résultat: +85% de conversions.",
+  "tags": ["Webflow", "Animation", "Conversion"],
+  "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=600&fit=crop&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&h=1080&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=1920&h=1080&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1547658719-da2b51169166?w=1920&h=1080&fit=crop&q=80"
+  ],
+  "link": "#"
+}

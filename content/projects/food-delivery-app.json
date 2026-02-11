@@ -1,0 +1,14 @@
+{
+  "title": "Food Delivery App",
+  "category": "mobile",
+  "description": "Expérience utilisateur optimisée pour livraison de repas",
+  "fullDescription": "Application de livraison de repas avec géolocalisation en temps réel. Système de commande simplifié, recommendations personnalisées par IA, et suivi de livreur en direct. Tests utilisateurs approfondis pour optimiser le parcours de commande.",
+  "tags": ["Figma", "Prototyping", "User Testing"],
+  "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=600&fit=crop&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1920&h=1080&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920&h=1080&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1920&h=1080&fit=crop&q=80"
+  ],
+  "link": "#"
+}

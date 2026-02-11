@@ -1,0 +1,12 @@
+{
+  "title": "Travaillons Ensemble",
+  "description": "Vous avez un projet en tête ? Je serais ravi d'en discuter avec vous et de voir comment nous pouvons créer quelque chose d'exceptionnel ensemble.",
+  "email": "contact@designer.com",
+  "phone": "+33 6 12 34 56 78",
+  "social": {
+    "linkedin": "https://linkedin.com/in/yourprofile",
+    "dribbble": "https://dribbble.com/yourprofile",
+    "behance": "https://behance.net/yourprofile",
+    "twitter": "https://twitter.com/yourprofile"
+  }
+}

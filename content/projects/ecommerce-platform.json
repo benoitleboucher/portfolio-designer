@@ -1,0 +1,15 @@
+{
+  "title": "E-commerce Platform",
+  "category": "web",
+  "description": "Interface moderne pour une plateforme de vente en ligne",
+  "fullDescription": "Conception complète d'une plateforme e-commerce moderne avec focus sur l'expérience utilisateur. Intégration de filtres avancés, panier intelligent, et processus de checkout optimisé. Design responsive avec animations subtiles pour guider l'utilisateur.",
+  "tags": ["Figma", "React", "Tailwind"],
+  "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1920&h=1080&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1920&h=1080&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1920&h=1080&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1557821552-17105176677c?w=1920&h=1080&fit=crop&q=80"
+  ],
+  "link": "#"
+}

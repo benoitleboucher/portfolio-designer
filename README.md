@@ -24,11 +24,57 @@ Un portfolio ultra-moderne et visuellement spectaculaire créé avec React, Tail
 ## 🛠 Stack Technique
 
 - **Framework**: React 18+ avec Vite
+- **CMS**: TinaCMS (Visual Content Management)
 - **Styling**: Tailwind CSS avec configuration personnalisée
 - **Animations**: Framer Motion
 - **Icônes**: Lucide React
 - **Formulaire**: React Hook Form
 - **Typographie**: Google Fonts (Playfair Display + Inter)
+
+## ✏️ TinaCMS - Visual Content Editor
+
+Ce projet intègre **TinaCMS**, un CMS visuel qui permet d'éditer tout le contenu sans toucher au code !
+
+### Fonctionnalités TinaCMS
+
+- ✅ **Interface d'édition visuelle** - Éditez le contenu directement depuis le navigateur
+- ✅ **Gestion des projets** - Ajoutez, modifiez, supprimez des projets facilement
+- ✅ **Mise à jour des compétences** - Changez les niveaux et ajoutez de nouvelles compétences
+- ✅ **Édition des accomplissements** - Gérez vos prix et certifications
+- ✅ **Modification du contenu** - Hero, About, Contact - tout est éditable
+- ✅ **Gestion des médias** - Uploadez et gérez vos images
+
+### Accéder au CMS
+
+1. **Démarrez le serveur de développement** (avec TinaCMS activé):
+   ```bash
+   npm run dev
+   ```
+
+2. **Accédez à l'interface d'administration**:
+   - Ouvrez `http://localhost:5179/admin` dans votre navigateur
+   - (Le numéro de port peut varier si 5179 est déjà utilisé)
+
+3. **Commencez à éditer**:
+   - Cliquez sur n'importe quelle collection (Projects, Skills, etc.)
+   - Modifiez le contenu dans les formulaires
+   - Sauvegardez vos changements
+
+### Configuration TinaCMS
+
+Pour utiliser TinaCMS Cloud (recommandé pour déploiement):
+
+1. Créez un compte sur [TinaCMS Cloud](https://app.tina.io)
+2. Créez un nouveau projet et connectez votre repo GitHub
+3. Copiez vos credentials (Client ID et Token)
+4. Créez un fichier `.env` à la racine du projet:
+   ```env
+   VITE_TINA_CLIENT_ID=votre_client_id
+   VITE_TINA_TOKEN=votre_token
+   VITE_TINA_BRANCH=main
+   ```
+
+**📖 Guide complet**: Consultez `TINACMS_SETUP.md` pour le guide détaillé en français
 
 ## 🚀 Installation
 

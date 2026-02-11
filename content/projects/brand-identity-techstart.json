@@ -1,0 +1,14 @@
+{
+  "title": "Brand Identity - TechStart",
+  "category": "branding",
+  "description": "Identité visuelle complète pour startup tech",
+  "fullDescription": "Création d'une identité de marque complète pour une startup technologique. Développement du logo, palette de couleurs, typographie, et guidelines de marque. Design system cohérent appliqué sur tous les supports digitaux et print.",
+  "tags": ["Illustrator", "Brand Strategy", "Logo Design"],
+  "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=800&fit=crop&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1920&h=1080&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1558655146-d09347e92766?w=1920&h=1080&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1920&h=1080&fit=crop&q=80"
+  ],
+  "link": "#"
+}
