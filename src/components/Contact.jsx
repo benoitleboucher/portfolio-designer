@@ -1,7 +1,8 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Send, CheckCircle, Mail, MapPin, Phone } from 'lucide-react';
+import { Send, CheckCircle, Mail, MapPin, Phone, Linkedin, Dribbble, Palette, Twitter } from 'lucide-react';
+import contactData from '../../content/contact/index.json';
 
 const Contact = () => {
   const ref = useRef(null);
@@ -60,19 +61,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'contact@designer.com',
-      link: 'mailto:contact@designer.com',
+      value: contactData.email,
+      link: `mailto:${contactData.email}`,
     },
     {
       icon: Phone,
       title: 'Téléphone',
-      value: '+33 6 12 34 56 78',
-      link: 'tel:+33612345678',
+      value: contactData.phone,
+      link: `tel:${contactData.phone.replace(/\s/g, '')}`,
     },
     {
       icon: MapPin,
       title: 'Localisation',
-      value: 'Paris, France',
+      value: contactData.location,
       link: null,
     },
   ];
@@ -96,15 +97,13 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-sm font-semibold text-accent tracking-widest uppercase mb-4">
-            Entrons en contact
+            {contactData.subtitle}
           </h2>
           <h3 className="font-display text-4xl md:text-6xl font-bold mb-6">
-            Let's Work{' '}
-            <span className="gradient-text">Together</span>
+            <span className="gradient-text">{contactData.title}</span>
           </h3>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
-            Un projet en tête ? Une question ? N'hésitez pas à me contacter. Je
-            serais ravi d'échanger avec vous.
+            {contactData.description}
           </p>
         </motion.div>
 
@@ -168,6 +167,63 @@ const Contact = () => {
                 collaborations passionnantes.
               </p>
             </motion.div>
+
+            {/* Social Links */}
+            <div>
+              <h4 className="text-xl font-display font-semibold mb-4">
+                Suivez-moi
+              </h4>
+              <div className="flex gap-4">
+                {contactData.social.linkedin && (
+                  <motion.a
+                    href={contactData.social.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 bg-graphite rounded-lg flex items-center justify-center hover:bg-accent hover:scale-110 transition-all duration-300"
+                    whileHover={{ y: -5 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Linkedin size={20} className="text-white" />
+                  </motion.a>
+                )}
+                {contactData.social.dribbble && (
+                  <motion.a
+                    href={contactData.social.dribbble}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 bg-graphite rounded-lg flex items-center justify-center hover:bg-accent hover:scale-110 transition-all duration-300"
+                    whileHover={{ y: -5 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Dribbble size={20} className="text-white" />
+                  </motion.a>
+                )}
+                {contactData.social.behance && (
+                  <motion.a
+                    href={contactData.social.behance}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 bg-graphite rounded-lg flex items-center justify-center hover:bg-accent hover:scale-110 transition-all duration-300"
+                    whileHover={{ y: -5 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Palette size={20} className="text-white" />
+                  </motion.a>
+                )}
+                {contactData.social.twitter && (
+                  <motion.a
+                    href={contactData.social.twitter}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 bg-graphite rounded-lg flex items-center justify-center hover:bg-accent hover:scale-110 transition-all duration-300"
+                    whileHover={{ y: -5 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Twitter size={20} className="text-white" />
+                  </motion.a>
+                )}
+              </div>
+            </div>
           </motion.div>
 
           {/* Right Column - Contact Form */}

@@ -1,6 +1,8 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Heart, Lightbulb, Users, Target } from 'lucide-react';
+import * as Icons from 'lucide-react';
+import aboutData from '../../content/about/index.json';
 
 const About = () => {
   const ref = useRef(null);
@@ -29,35 +31,12 @@ const About = () => {
     },
   };
 
-  const stats = [
-    { value: 5, label: 'Années d\'expérience', suffix: '+' },
-    { value: 50, label: 'Projets complétés', suffix: '+' },
-    { value: 30, label: 'Clients satisfaits', suffix: '+' },
-    { value: 98, label: 'Taux de satisfaction', suffix: '%' },
-  ];
+  const stats = aboutData.stats;
 
-  const values = [
-    {
-      icon: Heart,
-      title: 'Passion',
-      description: 'Chaque projet est une opportunité de créer quelque chose d\'exceptionnel',
-    },
-    {
-      icon: Lightbulb,
-      title: 'Innovation',
-      description: 'Toujours à la recherche de solutions créatives et avant-gardistes',
-    },
-    {
-      icon: Users,
-      title: 'Collaboration',
-      description: 'Le meilleur design naît de l\'écoute et du travail d\'équipe',
-    },
-    {
-      icon: Target,
-      title: 'Résultats',
-      description: 'Focus sur des solutions qui génèrent un impact mesurable',
-    },
-  ];
+  const values = aboutData.values.map(value => ({
+    ...value,
+    icon: Icons[value.icon] || Heart,
+  }));
 
   return (
     <section
@@ -82,10 +61,10 @@ const About = () => {
               <div className="relative w-full max-w-md mx-auto">
                 {/* Main Photo */}
                 <div className="relative aspect-[4/5] bg-gradient-to-br from-graphite to-charcoal rounded-tr-[80px] rounded-bl-[80px] overflow-hidden border-4 border-accent/20">
-                  {/* Professional Photo from Unsplash */}
+                  {/* Professional Photo */}
                   <img
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=750&fit=crop&q=80"
-                    alt="Designer UI/UX - Photo professionnelle"
+                    src={aboutData.image}
+                    alt={aboutData.title}
                     className="w-full h-full object-cover"
                   />
                   {/* Subtle overlay */}
@@ -114,27 +93,13 @@ const About = () => {
                 À propos de moi
               </h2>
               <h3 className="font-display text-4xl md:text-5xl font-bold mb-6">
-                Designer passionné,{' '}
-                <span className="gradient-text">créateur d'expériences</span>
+                {aboutData.title}
               </h3>
             </motion.div>
 
             <motion.div variants={itemVariants} className="space-y-4 text-white/70 text-lg mb-8">
               <p>
-                Avec plus de 5 ans d'expérience en design UI/UX, je transforme des
-                idées complexes en interfaces intuitives et visuellement captivantes.
-                Ma passion : créer des expériences qui font la différence.
-              </p>
-              <p>
-                Je crois fermement que le bon design n'est pas seulement une question
-                d'esthétique, mais de résolution de problèmes. Chaque pixel, chaque
-                interaction est pensé pour servir l'utilisateur et atteindre vos
-                objectifs business.
-              </p>
-              <p>
-                Spécialisé dans le design de produits digitaux, j'ai travaillé avec
-                des startups innovantes et des entreprises établies pour concevoir
-                des solutions qui génèrent des résultats mesurables.
+                {aboutData.description}
               </p>
             </motion.div>
 
@@ -161,7 +126,7 @@ const About = () => {
                       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                       transition={{ delay: 0.7 + index * 0.1 }}
                     >
-                      {stat.value}{stat.suffix}
+                      {stat.value}
                     </motion.span>
                   </motion.div>
                   <div className="text-sm text-white/60">{stat.label}</div>

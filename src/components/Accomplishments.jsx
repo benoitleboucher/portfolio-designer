@@ -1,67 +1,28 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Award, Trophy, Star, Target, TrendingUp, Zap } from 'lucide-react';
+import * as Icons from 'lucide-react';
+
+// Import all accomplishment files
+import accompSettings from '../../content/accomplishments/settings.json';
+import accomp1 from '../../content/accomplishments/award-ui-design.json';
+import accomp2 from '../../content/accomplishments/ux-certified.json';
+import accomp3 from '../../content/accomplishments/top-designer.json';
+import accomp4 from '../../content/accomplishments/innovation-award.json';
+import accomp5 from '../../content/accomplishments/roi-client.json';
+import accomp6 from '../../content/accomplishments/speaker-conference.json';
 
 const Accomplishments = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
-  const accomplishments = [
-    {
-      icon: Trophy,
-      title: 'Best UI Design Award 2024',
-      organization: 'Awwwards',
-      description: 'Récompensé pour l\'excellence en design d\'interface utilisateur',
-      year: '2024',
-      color: 'from-accent/20 to-accent/10',
-      iconColor: 'text-accent',
-    },
-    {
-      icon: Award,
-      title: 'UX Designer Certifié',
-      organization: 'Nielsen Norman Group',
-      description: 'Certification professionnelle en design d\'expérience utilisateur',
-      year: '2023',
-      color: 'from-accent/20 to-accent/10',
-      iconColor: 'text-accent',
-    },
-    {
-      icon: Star,
-      title: 'Top 10 Designer',
-      organization: 'Dribbble',
-      description: 'Classé parmi les meilleurs designers de l\'année',
-      year: '2024',
-      color: 'from-accent/20 to-accent/10',
-      iconColor: 'text-accent',
-    },
-    {
-      icon: Target,
-      title: 'Innovation Award',
-      organization: 'Tech Summit',
-      description: 'Prix de l\'innovation pour un projet de design thinking',
-      year: '2023',
-      color: 'from-accent/20 to-accent/10',
-      iconColor: 'text-accent',
-    },
-    {
-      icon: TrendingUp,
-      title: '150% ROI Client',
-      organization: 'E-commerce Redesign',
-      description: 'Augmentation significative des conversions après refonte',
-      year: '2024',
-      color: 'from-accent/20 to-accent/10',
-      iconColor: 'text-accent',
-    },
-    {
-      icon: Zap,
-      title: 'Speaker Conférence',
-      organization: 'Design Week Paris',
-      description: 'Intervenant sur "Le futur du design UI/UX"',
-      year: '2023',
-      color: 'from-accent/20 to-accent/10',
-      iconColor: 'text-accent',
-    },
-  ];
+  // Load accomplishments from TinaCMS with icons
+  const accompData = [accomp1, accomp2, accomp3, accomp4, accomp5, accomp6];
+  const accomplishments = accompData.map(item => ({
+    ...item,
+    icon: Icons[item.icon] || Icons.Award,
+    color: 'from-accent/20 to-accent/10',
+    iconColor: 'text-accent',
+  }));
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -106,14 +67,13 @@ const Accomplishments = () => {
           className="text-center mb-16"
         >
           <h2 className="text-sm font-semibold text-accent tracking-widest uppercase mb-4">
-            Réalisations
+            {accompSettings.subtitle}
           </h2>
           <h3 className="font-display text-4xl md:text-5xl font-bold mb-6">
-            Mes <span className="gradient-text">Accomplissements</span>
+            <span className="gradient-text">{accompSettings.title}</span>
           </h3>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
-            Une collection de reconnaissances, certifications et réussites qui
-            témoignent de mon engagement envers l'excellence
+            {accompSettings.description}
           </p>
         </motion.div>
 

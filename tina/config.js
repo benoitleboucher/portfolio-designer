@@ -87,9 +87,12 @@ export default defineConfig({
             label: 'Section Title',
           },
           {
-            type: 'rich-text',
+            type: 'string',
             name: 'description',
             label: 'Description',
+            ui: {
+              component: 'textarea',
+            },
           },
           {
             type: 'image',
@@ -114,6 +117,32 @@ export default defineConfig({
               },
             ],
           },
+          {
+            type: 'object',
+            name: 'values',
+            label: 'Values',
+            list: true,
+            fields: [
+              {
+                type: 'string',
+                name: 'icon',
+                label: 'Icon Name (e.g., Heart, Lightbulb, Users, Target)',
+              },
+              {
+                type: 'string',
+                name: 'title',
+                label: 'Value Title',
+              },
+              {
+                type: 'string',
+                name: 'description',
+                label: 'Description',
+                ui: {
+                  component: 'textarea',
+                },
+              },
+            ],
+          },
         ],
       },
       {
@@ -121,6 +150,9 @@ export default defineConfig({
         label: 'Projects',
         path: 'content/projects',
         format: 'json',
+        match: {
+          exclude: 'settings',
+        },
         fields: [
           {
             type: 'string',
@@ -132,8 +164,14 @@ export default defineConfig({
             type: 'string',
             name: 'category',
             label: 'Category',
-            options: ['web', 'mobile', 'branding'],
+            description: 'Select the project category',
             required: true,
+            options: [
+              { value: 'web', label: 'Web Design' },
+              { value: 'mobile', label: 'Mobile App' },
+              { value: 'branding', label: 'Branding' },
+              { value: 'web app', label: 'Web App' },
+            ],
           },
           {
             type: 'string',
@@ -173,6 +211,64 @@ export default defineConfig({
         ],
       },
       {
+        name: 'projects_settings',
+        label: 'Projects Section',
+        path: 'content/projects',
+        format: 'json',
+        match: {
+          include: 'settings',
+        },
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+        },
+        fields: [
+          {
+            type: 'string',
+            name: 'subtitle',
+            label: 'Section Subtitle',
+          },
+          {
+            type: 'string',
+            name: 'title',
+            label: 'Section Title',
+          },
+          {
+            type: 'string',
+            name: 'description',
+            label: 'Section Description',
+            ui: {
+              component: 'textarea',
+            },
+          },
+          {
+            type: 'object',
+            name: 'categories',
+            label: 'Project Categories',
+            description: 'Define the project categories. Note: The "All" filter button is added automatically to show all projects.',
+            list: true,
+            fields: [
+              {
+                type: 'string',
+                name: 'id',
+                label: 'Category ID (lowercase, no spaces)',
+                description: 'Example: web, mobile, branding, ui-design',
+                required: true,
+              },
+              {
+                type: 'string',
+                name: 'label',
+                label: 'Category Label (display name)',
+                description: 'Example: Web Design, Mobile App, Branding',
+                required: true,
+              },
+            ],
+          },
+        ],
+      },
+      {
         name: 'skill',
         label: 'Skills',
         path: 'content/skills',
@@ -184,6 +280,39 @@ export default defineConfig({
           },
         },
         fields: [
+          {
+            type: 'string',
+            name: 'subtitle',
+            label: 'Section Subtitle',
+          },
+          {
+            type: 'string',
+            name: 'title',
+            label: 'Section Title',
+          },
+          {
+            type: 'string',
+            name: 'description',
+            label: 'Section Description',
+            ui: {
+              component: 'textarea',
+            },
+          },
+          {
+            type: 'string',
+            name: 'designToolsTitle',
+            label: 'Design Tools Tab Title',
+          },
+          {
+            type: 'string',
+            name: 'devSkillsTitle',
+            label: 'Dev Skills Tab Title',
+          },
+          {
+            type: 'string',
+            name: 'softSkillsTitle',
+            label: 'Soft Skills Tab Title',
+          },
           {
             type: 'object',
             name: 'designTools',
@@ -238,6 +367,43 @@ export default defineConfig({
               },
             ],
           },
+          {
+            type: 'object',
+            name: 'infoCards',
+            label: 'Additional Info Cards',
+            list: true,
+            fields: [
+              {
+                type: 'string',
+                name: 'title',
+                label: 'Card Title',
+              },
+              {
+                type: 'string',
+                name: 'description',
+                label: 'Card Description',
+                ui: {
+                  component: 'textarea',
+                },
+              },
+              {
+                type: 'string',
+                name: 'icon',
+                label: 'Icon Name (e.g., Layers, Smartphone, Users)',
+              },
+            ],
+          },
+          {
+            type: 'string',
+            name: 'processTitle',
+            label: 'Design Process Title',
+          },
+          {
+            type: 'string',
+            name: 'processSteps',
+            label: 'Process Steps',
+            list: true,
+          },
         ],
       },
       {
@@ -245,6 +411,9 @@ export default defineConfig({
         label: 'Accomplishments',
         path: 'content/accomplishments',
         format: 'json',
+        match: {
+          exclude: 'settings',
+        },
         fields: [
           {
             type: 'string',
@@ -279,6 +448,41 @@ export default defineConfig({
         ],
       },
       {
+        name: 'accomplishments_settings',
+        label: 'Accomplishments Section',
+        path: 'content/accomplishments',
+        format: 'json',
+        match: {
+          include: 'settings',
+        },
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+        },
+        fields: [
+          {
+            type: 'string',
+            name: 'subtitle',
+            label: 'Section Subtitle',
+          },
+          {
+            type: 'string',
+            name: 'title',
+            label: 'Section Title',
+          },
+          {
+            type: 'string',
+            name: 'description',
+            label: 'Section Description',
+            ui: {
+              component: 'textarea',
+            },
+          },
+        ],
+      },
+      {
         name: 'contact',
         label: 'Contact Section',
         path: 'content/contact',
@@ -292,6 +496,11 @@ export default defineConfig({
         fields: [
           {
             type: 'string',
+            name: 'subtitle',
+            label: 'Section Subtitle (above title)',
+          },
+          {
+            type: 'string',
             name: 'title',
             label: 'Section Title',
           },
@@ -302,6 +511,11 @@ export default defineConfig({
             ui: {
               component: 'textarea',
             },
+          },
+          {
+            type: 'string',
+            name: 'location',
+            label: 'Location',
           },
           {
             type: 'string',

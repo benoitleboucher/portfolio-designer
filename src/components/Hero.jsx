@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowDown, Sparkles } from 'lucide-react';
+import heroData from '../../content/hero/index.json';
 
 const Hero = () => {
   // Animation variants
@@ -93,7 +94,7 @@ const Hero = () => {
             <motion.div variants={itemVariants} className="mb-6 inline-block">
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-sm font-medium">
                 <Sparkles size={16} className="animate-pulse" />
-                Disponible pour de nouveaux projets
+                {heroData.greeting}
               </span>
             </motion.div>
 
@@ -103,28 +104,20 @@ const Hero = () => {
               className="font-display font-bold mb-6"
             >
               <motion.span
-                className="block"
+                className="block gradient-text"
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
               >
-                Designer
+                {heroData.name}
               </motion.span>
               <motion.span
-                className="block gradient-text"
+                className="block text-white/90"
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.7, duration: 0.8 }}
               >
-                UI/UX
-              </motion.span>
-              <motion.span
-                className="block"
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.9, duration: 0.8 }}
-              >
-                Créatif
+                {heroData.title}
               </motion.span>
             </motion.h1>
 
@@ -133,12 +126,7 @@ const Hero = () => {
               variants={itemVariants}
               className="text-lg md:text-xl text-white/70 mb-8 max-w-xl mx-auto lg:mx-0"
             >
-              Je crée des{' '}
-              <span className="text-accent font-semibold">
-                expériences digitales
-              </span>{' '}
-              exceptionnelles qui captivent et inspirent. Design innovant •
-              Solutions créatives • Résultats mesurables.
+              {heroData.description}
             </motion.p>
 
             {/* CTA Buttons */}
@@ -152,7 +140,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(255, 69, 0, 0.5)' }}
                 whileTap={{ scale: 0.95 }}
               >
-                Voir mes projets
+                {heroData.ctaText}
               </motion.button>
               <motion.button
                 onClick={() => scrollToSection('#contact')}
@@ -211,10 +199,10 @@ const Hero = () => {
 
               {/* Image Container */}
               <div className="absolute inset-4 bg-gradient-to-br from-accent/20 to-graphite rounded-tl-[90px] rounded-br-[90px] overflow-hidden">
-                {/* Designer Image from Unsplash */}
+                {/* Designer Image */}
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=800&fit=crop&q=80"
-                  alt="Designer UI/UX"
+                  src={heroData.profileImage}
+                  alt={heroData.name}
                   className="w-full h-full object-cover"
                 />
                 {/* Overlay gradient for better text contrast */}

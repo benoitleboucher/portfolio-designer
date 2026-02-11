@@ -2,118 +2,35 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { ExternalLink, Github, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
+// Import all project files
+import projectSettings from '../../content/projects/settings.json';
+import project1 from '../../content/projects/ecommerce-platform.json';
+import project2 from '../../content/projects/fitness-tracking-app.json';
+import project3 from '../../content/projects/brand-identity-techstart.json';
+import project4 from '../../content/projects/dashboard-analytics.json';
+import project5 from '../../content/projects/food-delivery-app.json';
+import project6 from '../../content/projects/saas-landing-page.json';
+
 const Projects = () => {
+  // Load projects from JSON files
+  const projectsData = [project1, project2, project3, project4, project5, project6];
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [selectedFilter, setSelectedFilter] = useState('all');
   const [selectedProject, setSelectedProject] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  // Load categories from TinaCMS and add "All" filter automatically
   const categories = [
     { id: 'all', label: 'Tous' },
-    { id: 'web', label: 'Web Design' },
-    { id: 'mobile', label: 'Mobile App' },
-    { id: 'branding', label: 'Branding' },
+    ...projectSettings.categories
   ];
 
-  const projects = [
-    {
-      id: 1,
-      title: 'E-commerce Platform',
-      category: 'web',
-      description: 'Interface moderne pour une plateforme de vente en ligne',
-      fullDescription: 'Conception complète d\'une plateforme e-commerce moderne avec focus sur l\'expérience utilisateur. Intégration de filtres avancés, panier intelligent, et processus de checkout optimisé. Design responsive avec animations subtiles pour guider l\'utilisateur.',
-      tags: ['Figma', 'React', 'Tailwind'],
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&q=80',
-      gallery: [
-        'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1920&h=1080&fit=crop&q=80',
-        'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1920&h=1080&fit=crop&q=80',
-        'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1920&h=1080&fit=crop&q=80',
-        'https://images.unsplash.com/photo-1557821552-17105176677c?w=1920&h=1080&fit=crop&q=80',
-      ],
-      link: '#',
-      github: '#',
-    },
-    {
-      id: 2,
-      title: 'Fitness Tracking App',
-      category: 'mobile',
-      description: 'Application mobile de suivi d\'activité physique',
-      fullDescription: 'Application mobile native pour tracker les activités sportives en temps réel. Interface intuitive avec graphiques de progression, défis communautaires, et intégration avec appareils fitness. Design minimaliste centré sur les données importantes.',
-      tags: ['UI/UX', 'React Native', 'Firebase'],
-      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=800&fit=crop&q=80',
-      gallery: [
-        'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&h=1080&fit=crop&q=80',
-        'https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?w=1920&h=1080&fit=crop&q=80',
-        'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&h=1080&fit=crop&q=80',
-        'https://images.unsplash.com/photo-1487014679447-9f8336841d58?w=1920&h=1080&fit=crop&q=80',
-      ],
-      link: '#',
-      github: '#',
-    },
-    {
-      id: 3,
-      title: 'Brand Identity - TechStart',
-      category: 'branding',
-      description: 'Identité visuelle complète pour startup tech',
-      fullDescription: 'Création d\'une identité de marque complète pour une startup technologique. Développement du logo, palette de couleurs, typographie, et guidelines de marque. Design system cohérent appliqué sur tous les supports digitaux et print.',
-      tags: ['Illustrator', 'Brand Strategy', 'Logo Design'],
-      image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=800&fit=crop&q=80',
-      gallery: [
-        'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1920&h=1080&fit=crop&q=80',
-        'https://images.unsplash.com/photo-1558655146-d09347e92766?w=1920&h=1080&fit=crop&q=80',
-        'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1920&h=1080&fit=crop&q=80',
-      ],
-      link: '#',
-    },
-    {
-      id: 4,
-      title: 'Dashboard Analytics',
-      category: 'web',
-      description: 'Tableau de bord interactif pour analyse de données',
-      fullDescription: 'Dashboard analytique complexe avec visualisations de données en temps réel. Interface personnalisable avec widgets drag-and-drop, graphiques interactifs D3.js, et exports automatisés. Optimisé pour traiter de grands volumes de données.',
-      tags: ['Vue.js', 'D3.js', 'API'],
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=80',
-      gallery: [
-        'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&h=1080&fit=crop&q=80',
-        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&h=1080&fit=crop&q=80',
-        'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1920&h=1080&fit=crop&q=80',
-        'https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=1920&h=1080&fit=crop&q=80',
-      ],
-      link: '#',
-      github: '#',
-    },
-    {
-      id: 5,
-      title: 'Food Delivery App',
-      category: 'mobile',
-      description: 'Expérience utilisateur optimisée pour livraison de repas',
-      fullDescription: 'Application de livraison de repas avec géolocalisation en temps réel. Système de commande simplifié, recommendations personnalisées par IA, et suivi de livreur en direct. Tests utilisateurs approfondis pour optimiser le parcours de commande.',
-      tags: ['Figma', 'Prototyping', 'User Testing'],
-      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=600&fit=crop&q=80',
-      gallery: [
-        'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1920&h=1080&fit=crop&q=80',
-        'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920&h=1080&fit=crop&q=80',
-        'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1920&h=1080&fit=crop&q=80',
-      ],
-      link: '#',
-    },
-    {
-      id: 6,
-      title: 'SaaS Landing Page',
-      category: 'web',
-      description: 'Landing page convertissante pour produit SaaS',
-      fullDescription: 'Landing page haute conversion pour un produit SaaS B2B. Copywriting optimisé, hiérarchie visuelle claire, et CTAs stratégiquement placés. Animations Webflow sur mesure et optimisation SEO complète. Résultat: +85% de conversions.',
-      tags: ['Webflow', 'Animation', 'Conversion'],
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=600&fit=crop&q=80',
-      gallery: [
-        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&h=1080&fit=crop&q=80',
-        'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=1920&h=1080&fit=crop&q=80',
-        'https://images.unsplash.com/photo-1547658719-da2b51169166?w=1920&h=1080&fit=crop&q=80',
-      ],
-      link: '#',
-    },
-  ];
+  // Load projects from TinaCMS content with IDs
+  const projects = projectsData.map((project, index) => ({
+    ...project,
+    id: index + 1,
+  }));
 
   const filteredProjects =
     selectedFilter === 'all'
@@ -240,14 +157,13 @@ const Projects = () => {
           className="text-center mb-12"
         >
           <h2 className="text-sm font-semibold text-accent tracking-widest uppercase mb-4">
-            Portfolio
+            {projectSettings.subtitle}
           </h2>
           <h3 className="font-display text-4xl md:text-5xl font-bold mb-6">
-            Mes <span className="gradient-text">Projets</span>
+            <span className="gradient-text">{projectSettings.title}</span>
           </h3>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
-            Une sélection de mes travaux récents qui démontrent ma passion pour le
-            design et l'innovation
+            {projectSettings.description}
           </p>
         </motion.div>
 

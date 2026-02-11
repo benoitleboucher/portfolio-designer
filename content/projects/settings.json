@@ -1,0 +1,23 @@
+{
+  "subtitle": "Portfolio",
+  "title": "Mes Projets",
+  "description": "Une sélection de mes travaux récents qui démontrent ma passion pour le design et l'innovation",
+  "categories": [
+    {
+      "id": "web",
+      "label": "Web Design"
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile App"
+    },
+    {
+      "id": "web app",
+      "label": "Web App"
+    },
+    {
+      "id": "branding",
+      "label": "Branding"
+    }
+  ]
+}

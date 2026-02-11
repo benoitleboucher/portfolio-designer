@@ -1,11 +1,13 @@
 {
+  "subtitle": "Entrons en contact",
   "title": "Travaillons Ensemble",
   "description": "Vous avez un projet en tête ? Je serais ravi d'en discuter avec vous et de voir comment nous pouvons créer quelque chose d'exceptionnel ensemble.",
-  "email": "contact@designer.com",
-  "phone": "+33 6 12 34 56 78",
+  "location": "Sainte-Thérèse, Canada",
+  "email": "benoitboucher@gmail.com",
+  "phone": "+1.514.206.4594",
   "social": {
     "linkedin": "https://linkedin.com/in/yourprofile",
-    "dribbble": "https://dribbble.com/yourprofile",
+    "dribbble": "https://dribbble.com/yourprofilef",
     "behance": "https://behance.net/yourprofile",
     "twitter": "https://twitter.com/yourprofile"
   }

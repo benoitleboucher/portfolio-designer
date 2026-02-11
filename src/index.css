@@ -77,7 +77,7 @@
 
   /* Button base styles */
   .btn {
-    @apply px-8 py-4 font-medium tracking-wide transition-all duration-300 ease-out;
+    @apply px-8 py-4 font-medium tracking-wide transition-all duration-300 ease-out rounded-lg;
   }
 
   .btn-primary {

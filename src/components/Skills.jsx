@@ -10,6 +10,8 @@ import {
   MessageSquare,
   Lightbulb,
 } from 'lucide-react';
+import * as Icons from 'lucide-react';
+import skillsData from '../../content/skills/index.json';
 
 const Skills = () => {
   const ref = useRef(null);
@@ -18,34 +20,19 @@ const Skills = () => {
 
   const skillCategories = {
     design: {
-      title: 'Design Tools',
+      title: skillsData.designToolsTitle,
       icon: Palette,
-      skills: [
-        { name: 'Figma', level: 95, icon: Figma },
-        { name: 'Adobe XD', level: 90, icon: Layers },
-        { name: 'Photoshop', level: 85, icon: Palette },
-        { name: 'Illustrator', level: 88, icon: Palette },
-      ],
+      skills: skillsData.designTools.map(skill => ({ ...skill, icon: Code })),
     },
     dev: {
-      title: 'Dev Skills',
+      title: skillsData.devSkillsTitle,
       icon: Code,
-      skills: [
-        { name: 'HTML/CSS', level: 92, icon: Code },
-        { name: 'JavaScript', level: 85, icon: Code },
-        { name: 'React', level: 88, icon: Code },
-        { name: 'Tailwind CSS', level: 90, icon: Code },
-      ],
+      skills: skillsData.devSkills.map(skill => ({ ...skill, icon: Code })),
     },
     soft: {
-      title: 'Soft Skills',
+      title: skillsData.softSkillsTitle,
       icon: Users,
-      skills: [
-        { name: 'Communication', level: 95, icon: MessageSquare },
-        { name: 'Collaboration', level: 92, icon: Users },
-        { name: 'Créativité', level: 98, icon: Lightbulb },
-        { name: 'Adaptabilité', level: 90, icon: Smartphone },
-      ],
+      skills: skillsData.softSkills.map(skill => ({ ...skill, level: 95, icon: MessageSquare })),
     },
   };
 
@@ -102,14 +89,13 @@ const Skills = () => {
           className="text-center mb-12"
         >
           <h2 className="text-sm font-semibold text-accent tracking-widest uppercase mb-4">
-            Expertise
+            {skillsData.subtitle}
           </h2>
           <h3 className="font-display text-4xl md:text-5xl font-bold mb-6">
-            Mes <span className="gradient-text">Compétences</span>
+            <span className="gradient-text">{skillsData.title}</span>
           </h3>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
-            Un mix équilibré de compétences techniques et créatives pour donner vie
-            à vos projets
+            {skillsData.description}
           </p>
         </motion.div>
 
@@ -228,24 +214,8 @@ const Skills = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 max-w-5xl mx-auto"
         >
-          {[
-            {
-              title: 'Design Systems',
-              description: 'Création de systèmes de design scalables et cohérents',
-              icon: Layers,
-            },
-            {
-              title: 'Prototyping',
-              description: 'Prototypes interactifs et tests utilisateurs',
-              icon: Smartphone,
-            },
-            {
-              title: 'User Research',
-              description: 'Recherche utilisateur et analyse comportementale',
-              icon: Users,
-            },
-          ].map((card, index) => {
-            const CardIcon = card.icon;
+          {skillsData.infoCards.map((card, index) => {
+            const CardIcon = Icons[card.icon] || Layers;
             return (
               <motion.div
                 key={index}
@@ -275,16 +245,10 @@ const Skills = () => {
           className="mt-20 text-center"
         >
           <h4 className="text-2xl font-display font-semibold mb-8">
-            Mon processus de design
+            {skillsData.processTitle}
           </h4>
           <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 max-w-4xl mx-auto">
-            {[
-              'Recherche',
-              'Idéation',
-              'Prototypage',
-              'Test',
-              'Itération',
-            ].map((step, index) => (
+            {skillsData.processSteps.map((step, index) => (
               <motion.div
                 key={index}
                 className="flex items-center gap-4"
@@ -298,7 +262,7 @@ const Skills = () => {
                   </div>
                   <span className="font-medium text-white/80">{step}</span>
                 </div>
-                {index < 4 && (
+                {index < skillsData.processSteps.length - 1 && (
                   <div className="hidden md:block w-8 h-0.5 bg-accent/30"></div>
                 )}
               </motion.div>
