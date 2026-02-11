@@ -210,14 +210,13 @@ const Projects = () => {
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-graphite/40 opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
               </div>
 
-              {/* Overlay Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-deep-black via-deep-black/60 to-transparent opacity-90"></div>
+              {/* Overlay Gradient - Black 30% top, 80% middle, 85% bottom */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/80 to-black/30"></div>
 
               {/* Content */}
-              <div className="relative h-full flex flex-col justify-end p-6">
+              <div className="relative h-full flex flex-col justify-end p-6 pb-5">
                 {/* Category Badge */}
                 <span className="inline-block w-fit px-3 py-1 mb-3 bg-accent/20 border border-accent/30 rounded-full text-accent text-xs font-semibold uppercase tracking-wider">
                   {categories.find((c) => c.id === project.category)?.label}
@@ -229,12 +228,12 @@ const Projects = () => {
                 </h4>
 
                 {/* Description */}
-                <p className="text-white/70 text-sm mb-4 line-clamp-2">
+                <p className="text-white/70 text-sm mb-3 line-clamp-2">
                   {project.description}
                 </p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-0">
                   {project.tags.map((tag, index) => (
                     <span
                       key={index}
@@ -246,7 +245,7 @@ const Projects = () => {
                 </div>
 
                 {/* Click to view details hint */}
-                <div className="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <span className="text-accent text-sm font-medium">
                     Cliquez pour voir les détails →
                   </span>
