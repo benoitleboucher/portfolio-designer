@@ -2,20 +2,24 @@
   "subtitle": "Expertise",
   "title": "Mes Compétences",
   "description": "Un mix équilibré de compétences techniques et créatives pour donner vie à vos projets",
-  "designToolsTitle": "Design Tools",
-  "devSkillsTitle": "Dev Skills",
+  "designToolsTitle": "Design & Creative Tools",
+  "devSkillsTitle": "AI & Web Tools",
   "softSkillsTitle": "Soft Skills",
   "designTools": [
     { "name": "Figma", "level": 95 },
-    { "name": "Adobe XD", "level": 90 },
-    { "name": "Photoshop", "level": 85 },
-    { "name": "Illustrator", "level": 88 }
+    { "name": "Photoshop", "level": 95 },
+    { "name": "Illustrator", "level": 90 },
+    { "name": "After Effects", "level": 85 },
+    { "name": "Ableton Live", "level": 88 },
+    { "name": "Affinity Suite", "level": 85 }
   ],
   "devSkills": [
-    { "name": "HTML/CSS", "level": 92 },
-    { "name": "JavaScript", "level": 85 },
-    { "name": "React", "level": 88 },
-    { "name": "Tailwind CSS", "level": 90 }
+    { "name": "Lovable", "level": 90 },
+    { "name": "MidJourney", "level": 92 },
+    { "name": "UX Pilot", "level": 88 },
+    { "name": "Wix", "level": 85 },
+    { "name": "HTML/CSS", "level": 90 },
+    { "name": "JavaScript", "level": 80 }
   ],
   "softSkills": [
     { "name": "Communication", "description": "Excellente capacité à communiquer avec les clients et l'équipe" },
@@ -25,19 +29,19 @@
   ],
   "infoCards": [
     {
-      "title": "Design Systems",
-      "description": "Création de systèmes de design scalables et cohérents",
+      "title": "UI/UX Design",
+      "description": "25+ ans d'expérience en design d'interfaces pour web et mobile",
       "icon": "Layers"
     },
     {
-      "title": "Prototyping",
-      "description": "Prototypes interactifs et tests utilisateurs",
-      "icon": "Smartphone"
+      "title": "AI-Powered Design",
+      "description": "Maîtrise des outils d'IA pour accélérer et améliorer le processus créatif",
+      "icon": "Sparkles"
     },
     {
-      "title": "User Research",
-      "description": "Recherche utilisateur et analyse comportementale",
-      "icon": "Users"
+      "title": "Audio & Visual",
+      "description": "Production musicale, vidéo, VJ et design sonore",
+      "icon": "Music"
     }
   ],
   "processTitle": "Mon processus de design",

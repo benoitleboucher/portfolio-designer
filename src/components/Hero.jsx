@@ -112,7 +112,7 @@ const Hero = () => {
                 {heroData.name}
               </motion.span>
               <motion.span
-                className="block text-white/90"
+                className="block gradient-text"
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.7, duration: 0.8 }}
@@ -157,11 +157,7 @@ const Hero = () => {
               variants={itemVariants}
               className="mt-12 grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0"
             >
-              {[
-                { value: '5+', label: 'Années' },
-                { value: '50+', label: 'Projets' },
-                { value: '30+', label: 'Clients' },
-              ].map((stat, index) => (
+              {heroData.stats.map((stat, index) => (
                 <motion.div
                   key={index}
                   className="text-center lg:text-left"

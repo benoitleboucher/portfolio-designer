@@ -93,7 +93,7 @@ const About = () => {
                 À propos de moi
               </h2>
               <h3 className="font-display text-4xl md:text-5xl font-bold mb-6">
-                {aboutData.title}
+                <span className="gradient-text">{aboutData.title}</span>
               </h3>
             </motion.div>
 

@@ -4,12 +4,12 @@ import * as Icons from 'lucide-react';
 
 // Import all accomplishment files
 import accompSettings from '../../content/accomplishments/settings.json';
-import accomp1 from '../../content/accomplishments/award-ui-design.json';
-import accomp2 from '../../content/accomplishments/ux-certified.json';
-import accomp3 from '../../content/accomplishments/top-designer.json';
-import accomp4 from '../../content/accomplishments/innovation-award.json';
-import accomp5 from '../../content/accomplishments/roi-client.json';
-import accomp6 from '../../content/accomplishments/speaker-conference.json';
+import accomp1 from '../../content/accomplishments/bandsintown.json';
+import accomp2 from '../../content/accomplishments/cellfish.json';
+import accomp3 from '../../content/accomplishments/radio-show.json';
+import accomp4 from '../../content/accomplishments/eresys.json';
+import accomp5 from '../../content/accomplishments/marvel.json';
+import accomp6 from '../../content/accomplishments/music.json';
 
 const Accomplishments = () => {
   const ref = useRef(null);
@@ -150,12 +150,7 @@ const Accomplishments = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
         >
-          {[
-            { value: '6+', label: 'Prix & Certifications' },
-            { value: '98%', label: 'Satisfaction Client' },
-            { value: '15+', label: 'Projets Primés' },
-            { value: '3', label: 'Conférences' },
-          ].map((stat, index) => (
+          {accompSettings.summaryStats?.map((stat, index) => (
             <motion.div
               key={index}
               className="text-center p-6 bg-graphite/50 rounded-xl border border-graphite hover:border-accent/30 transition-all duration-300"

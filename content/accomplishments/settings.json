@@ -1,5 +1,23 @@
 {
-  "subtitle": "Réalisations",
-  "title": "Mes Accomplissements",
-  "description": "Une collection de reconnaissances, certifications et réussites qui témoignent de mon engagement envers l'excellence"
+  "subtitle": "Parcours",
+  "title": "Expérience & Réalisations",
+  "description": "25 ans de création digitale : des grandes entreprises tech aux projets artistiques, en passant par la musique et la radio",
+  "summaryStats": [
+    {
+      "value": "25+",
+      "label": "Années d'expérience"
+    },
+    {
+      "value": "10",
+      "label": "Années Eresys Collective"
+    },
+    {
+      "value": "7",
+      "label": "Années d'Émissions de Radio"
+    },
+    {
+      "value": "100+",
+      "label": "Projets complétés"
+    }
+  ]
 }

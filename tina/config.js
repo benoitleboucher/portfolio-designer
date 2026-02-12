@@ -24,6 +24,9 @@ export default defineConfig({
         label: 'Hero Section',
         path: 'content/hero',
         format: 'json',
+        match: {
+          include: 'index',
+        },
         ui: {
           allowedActions: {
             create: false,
@@ -67,6 +70,24 @@ export default defineConfig({
             name: 'profileImage',
             label: 'Profile Image',
           },
+          {
+            type: 'object',
+            name: 'stats',
+            label: 'Statistics',
+            list: true,
+            fields: [
+              {
+                type: 'string',
+                name: 'value',
+                label: 'Value (e.g., 25+)',
+              },
+              {
+                type: 'string',
+                name: 'label',
+                label: 'Label (e.g., Années)',
+              },
+            ],
+          },
         ],
       },
       {
@@ -74,6 +95,9 @@ export default defineConfig({
         label: 'About Section',
         path: 'content/about',
         format: 'json',
+        match: {
+          include: 'index',
+        },
         ui: {
           allowedActions: {
             create: false,
@@ -273,6 +297,9 @@ export default defineConfig({
         label: 'Skills',
         path: 'content/skills',
         format: 'json',
+        match: {
+          include: 'index',
+        },
         ui: {
           allowedActions: {
             create: false,
@@ -480,6 +507,24 @@ export default defineConfig({
               component: 'textarea',
             },
           },
+          {
+            type: 'object',
+            name: 'summaryStats',
+            label: 'Summary Statistics',
+            list: true,
+            fields: [
+              {
+                type: 'string',
+                name: 'value',
+                label: 'Value (e.g., 25+)',
+              },
+              {
+                type: 'string',
+                name: 'label',
+                label: 'Label',
+              },
+            ],
+          },
         ],
       },
       {
@@ -487,6 +532,9 @@ export default defineConfig({
         label: 'Contact Section',
         path: 'content/contact',
         format: 'json',
+        match: {
+          include: 'index',
+        },
         ui: {
           allowedActions: {
             create: false,

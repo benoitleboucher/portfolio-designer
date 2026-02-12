@@ -1,8 +1,13 @@
 {
   "greeting": "Disponible pour de nouveaux projets",
   "name": "Benoit",
-  "title": "Designer UI/UX",
-  "description": "Je crée des expériences digitales qui captivent et inspirent. Design innovant • Solutions créatives • Résultats mesurables.",
+  "title": "UI/UX Designer / Developer",
+  "description": "25+ ans d'expérience en design digital et développement web. De Bandsintown à Cellfish Media, je transforme des idées en expériences utilisateur exceptionnelles.",
   "ctaText": "Voir mes projets",
-  "profileImage": "/uploads/DSC07186.JPG"
+  "profileImage": "/uploads/DSC07186.JPG",
+  "stats": [
+    { "value": "25+", "label": "Années" },
+    { "value": "100+", "label": "Projets" },
+    { "value": "50+", "label": "Clients" }
+  ]
 }
